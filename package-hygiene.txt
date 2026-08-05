@@ -1,1 +1,1 @@
-ktrobotics-dotnet-sdk source SDK package; depends on kinematic-trees/kt-robotics@0.1.3; no native runtime bundled.
+ktrobotics-dotnet-sdk source SDK package; depends on kinematic-trees/kt-node@0.1.1+build.18267; no native runtime bundled.

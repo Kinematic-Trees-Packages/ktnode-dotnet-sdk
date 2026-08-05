@@ -232,29 +232,29 @@ internal static class Native
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] public delegate NextStep AlgorithmStepFn(IntPtr userData, IntPtr context);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] public delegate NextStep AlgorithmCloseFn(IntPtr userData, IntPtr context);
 
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_abi_version_major();
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_abi_version_minor();
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_runtime_build_id();
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_version(ref VersionInfo version);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_create_v1(ref RuntimeOptions options, ref IntPtr runtime, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_run(IntPtr runtime, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_request_close(IntPtr runtime);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_destroy(ref IntPtr runtime, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_is_closing(IntPtr context, ref uint value);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_request_close(IntPtr context);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_report_error(IntPtr context, StringView message);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_set(IntPtr context, StringView channel, BytesView payload, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_set_source(IntPtr context, StringView channel, StringView source, BytesView payload, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_read(IntPtr context, StringView channel, ref ReadOptions options, ref IntPtr batch, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_metrics_json(IntPtr context, ref IntPtr output, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern ulong kt_message_batch_count(IntPtr batch);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_message_batch_item(IntPtr batch, ulong index, ref MessageView item, ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_message_batch_destroy(ref IntPtr batch);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern BytesView kt_owned_bytes_view(IntPtr bytes);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_owned_bytes_destroy(ref IntPtr bytes);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_error_message(IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_error_destroy(ref IntPtr error);
-    [DllImport("lib_ktrobotics.so.1", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_status_name(uint status);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_abi_version_major();
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_abi_version_minor();
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_runtime_build_id();
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_version(ref VersionInfo version);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_create_v1(ref RuntimeOptions options, ref IntPtr runtime, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_run(IntPtr runtime, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_request_close(IntPtr runtime);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_runtime_destroy(ref IntPtr runtime, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_is_closing(IntPtr context, ref uint value);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_request_close(IntPtr context);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_report_error(IntPtr context, StringView message);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_set(IntPtr context, StringView channel, BytesView payload, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_set_source(IntPtr context, StringView channel, StringView source, BytesView payload, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_read(IntPtr context, StringView channel, ref ReadOptions options, ref IntPtr batch, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_context_metrics_json(IntPtr context, ref IntPtr output, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern ulong kt_message_batch_count(IntPtr batch);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern uint kt_message_batch_item(IntPtr batch, ulong index, ref MessageView item, ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_message_batch_destroy(ref IntPtr batch);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern BytesView kt_owned_bytes_view(IntPtr bytes);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_owned_bytes_destroy(ref IntPtr bytes);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_error_message(IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern void kt_error_destroy(ref IntPtr error);
+    [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)] public static extern StringView kt_status_name(uint status);
 }
 
 [StructLayout(LayoutKind.Sequential)] internal struct StringView { public IntPtr Data; public ulong Length; public string ToManagedString() => Data == IntPtr.Zero || Length == 0 ? string.Empty : Marshal.PtrToStringUTF8(Data, checked((int)Length)) ?? string.Empty; }
