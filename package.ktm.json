@@ -1,0 +1,125 @@
+{
+  "config": {
+    "properties": {},
+    "required": [],
+    "type": "object"
+  },
+  "dataflow": {
+    "inputs": [],
+    "outputs": []
+  },
+  "dependencies": {
+    "optional": [],
+    "packages": [
+      {
+        "classification": "library",
+        "environments": {
+          "linux_18": "linux_18",
+          "linux_20": "linux_20"
+        },
+        "name": "kt-node",
+        "owner": "kinematic-trees",
+        "version": "0.1.1+build.18267"
+      }
+    ],
+    "system": []
+  },
+  "distribution": {
+    "packages": [],
+    "urlStrategy": "local-relative"
+  },
+  "files": [
+    "boilerplate",
+    "scripts/package.sh",
+    "package.ktm.json",
+    "dotnet",
+    "share",
+    "package-hygiene.txt"
+  ],
+  "metadata": {
+    "author": "Kinematic Trees Package Team",
+    "description": "Kinematic Trees C# SDK boilerplate for projects that build against KTM-installed kt-node.",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-dotnet-sdk",
+    "keywords": [
+      "kinematic-trees",
+      "robotics",
+      "sdk",
+      "boilerplate",
+      "kt-node",
+      "csharp"
+    ],
+    "language": "binary",
+    "license": "MIT",
+    "maintainers": [
+      {
+        "email": "team@kinematictrees.com",
+        "name": "Kinematic Trees Package Team"
+      }
+    ],
+    "name": "ktrobotics-csharp-sdk",
+    "namespace": "kinematic-trees",
+    "packageType": "local",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Kinematic-Trees-Packages/ktnode-dotnet-sdk.git"
+    },
+    "version": "0.1.1"
+  },
+  "resources": {
+    "gpu": false,
+    "ports": [],
+    "x11": false
+  },
+  "runEnvironments": [
+    {
+      "arch": "x64",
+      "description": "Kinematic Trees C# SDK boilerplate source package for Linux 18.",
+      "hostRequirements": {
+        "libc": {
+          "implementation": "glibc",
+          "minimumVersion": "2.27"
+        }
+      },
+      "name": "linux_18",
+      "os": "linux",
+      "recipes": [
+        {
+          "action": "build",
+          "command": {
+            "args": [],
+            "program": "scripts/package.sh"
+          },
+          "timeoutSeconds": 600
+        }
+      ],
+      "type": "native"
+    },
+    {
+      "arch": "x64",
+      "description": "Kinematic Trees C# SDK boilerplate source package for Linux 20.",
+      "hostRequirements": {
+        "libc": {
+          "implementation": "glibc",
+          "minimumVersion": "2.29"
+        }
+      },
+      "name": "linux_20",
+      "os": "linux",
+      "recipes": [
+        {
+          "action": "build",
+          "command": {
+            "args": [],
+            "program": "scripts/package.sh"
+          },
+          "timeoutSeconds": 600
+        }
+      ],
+      "type": "native"
+    }
+  ],
+  "runtime": {
+    "sdk": "csharp"
+  },
+  "schemaVersion": "3"
+}

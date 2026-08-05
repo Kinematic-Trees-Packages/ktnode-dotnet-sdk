@@ -1,0 +1,22 @@
+using System.Runtime.InteropServices;
+
+namespace {{KTM_CREATE_MODULE_NAME}};
+
+public sealed class Robot
+{
+    public string Status()
+    {
+        var major = Native.kt_abi_version_major();
+        var minor = Native.kt_abi_version_minor();
+        return $"kt-node ABI {major}.{minor} loaded";
+    }
+
+    private static class Native
+    {
+        [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint kt_abi_version_major();
+
+        [DllImport("libkt_node.so", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint kt_abi_version_minor();
+    }
+}
