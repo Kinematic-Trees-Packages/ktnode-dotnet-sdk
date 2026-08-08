@@ -4,8 +4,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>KinematicTrees.Robotics</AssemblyName>
-    <RootNamespace>KinematicTrees.Robotics</RootNamespace>
+    <AssemblyName>KinematicTrees.KtNode</AssemblyName>
+    <RootNamespace>KinematicTrees.KtNode</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.FlatBuffers" Version="24.12.23" />

@@ -1,7 +1,7 @@
 using bow.data;
 using Google.FlatBuffers;
 
-namespace KinematicTrees.Robotics;
+namespace KinematicTrees.KtNode;
 
 public sealed record ImageFrame(
     string Source,

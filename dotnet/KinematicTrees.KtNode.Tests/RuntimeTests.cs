@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace KinematicTrees.Robotics.Tests;
+namespace KinematicTrees.KtNode.Tests;
 
 public sealed class RuntimeTests
 {
@@ -18,7 +18,7 @@ public sealed class RuntimeTests
     {
         var version = Runtime.AbiVersion;
         Assert.Equal(1u, version.Major);
-        Assert.Equal(1u, version.Minor);
+        Assert.Equal(2u, version.Minor);
         Assert.False(string.IsNullOrWhiteSpace(Runtime.BuildId));
         var runtimeVersion = Runtime.RuntimeVersion;
         Assert.Equal(0u, runtimeVersion.Major);

@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace KinematicTrees.Robotics.Tests;
+namespace KinematicTrees.KtNode.Tests;
 
 public sealed class VisionTests
 {

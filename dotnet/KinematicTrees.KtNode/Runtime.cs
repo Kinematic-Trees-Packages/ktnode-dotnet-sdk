@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace KinematicTrees.Robotics;
+namespace KinematicTrees.KtNode;
 
 public enum NextStep : uint { Continue = 0, Stop = 1, Recoverable = 2, Fatal = 3 }
 public enum ReadMode : uint { One = 0, AllAvailable = 1, Count = 2 }
@@ -131,7 +131,7 @@ public sealed class Runtime : IDisposable
     public Runtime(string packagePath, string runtimePath, INode node)
     {
         _node = node ?? throw new ArgumentNullException(nameof(node));
-        if (Native.kt_abi_version_major() != Native.AbiMajor) throw new KtException(3, $"unsupported KT Robotics ABI major {Native.kt_abi_version_major()}");
+        if (Native.kt_abi_version_major() != Native.AbiMajor) throw new KtException(3, $"unsupported KT Node ABI major {Native.kt_abi_version_major()}");
         _setup = SetupThunk;
         _step = StepThunk;
         _close = CloseThunk;
@@ -226,7 +226,7 @@ public sealed class Runtime : IDisposable
 internal static class Native
 {
     public const uint AbiMajor = 1;
-    public const uint AbiMinor = 1;
+    public const uint AbiMinor = 2;
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] public delegate NextStep AlgorithmSetupFn(IntPtr userData, IntPtr context);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] public delegate NextStep AlgorithmStepFn(IntPtr userData, IntPtr context);
