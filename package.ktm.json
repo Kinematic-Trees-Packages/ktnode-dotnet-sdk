@@ -39,7 +39,7 @@
   "metadata": {
     "author": "Kinematic Trees Package Team",
     "description": "Kinematic Trees C# SDK boilerplate for projects that build against KTM-installed kt-node.",
-    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-dotnet-sdk",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/kt-node-csharp-sdk",
     "keywords": [
       "kinematic-trees",
       "robotics",
@@ -56,12 +56,12 @@
         "name": "Kinematic Trees Package Team"
       }
     ],
-    "name": "ktrobotics-csharp-sdk",
+    "name": "kt-node-csharp-sdk",
     "namespace": "kinematic-trees",
     "packageType": "local",
     "repository": {
       "type": "git",
-      "url": "https://github.com/Kinematic-Trees-Packages/ktnode-dotnet-sdk.git"
+      "url": "https://github.com/Kinematic-Trees-Packages/kt-node-csharp-sdk.git"
     },
     "version": "0.1.1"
   },
